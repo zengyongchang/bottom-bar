@@ -47,7 +47,7 @@ public class BottomBarTab extends LinearLayout {
   private final int eightDps;
   private final int sixteenDps;
 
-  com.zyc.android.bottombar.BottomBarBadge badge;
+  BottomBarBadge badge;
 
   private Type type = Type.FIXED;
   private boolean isTitleless;
@@ -70,9 +70,9 @@ public class BottomBarTab extends LinearLayout {
   BottomBarTab(Context context) {
     super(context);
 
-    sixDps = com.zyc.android.bottombar.MiscUtils.dpToPixel(context, 6);
-    eightDps = com.zyc.android.bottombar.MiscUtils.dpToPixel(context, 8);
-    sixteenDps = com.zyc.android.bottombar.MiscUtils.dpToPixel(context, 16);
+    sixDps = MiscUtils.dpToPixel(context, 6);
+    eightDps = MiscUtils.dpToPixel(context, 8);
+    sixteenDps = MiscUtils.dpToPixel(context, 16);
   }
 
   void setConfig(@NonNull Config config) {
@@ -92,7 +92,7 @@ public class BottomBarTab extends LinearLayout {
     setOrientation(VERTICAL);
     setGravity(isTitleless ? Gravity.CENTER : Gravity.CENTER_HORIZONTAL);
     setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-    setBackgroundResource(com.zyc.android.bottombar.MiscUtils.getDrawableRes(getContext(), R.attr.selectableItemBackgroundBorderless));
+    setBackgroundResource(MiscUtils.getDrawableRes(getContext(), R.attr.selectableItemBackgroundBorderless));
 
     iconView = findViewById(R.id.bb_bottom_bar_icon);
     iconView.setImageResource(iconResId);
@@ -324,7 +324,7 @@ public class BottomBarTab extends LinearLayout {
     }
 
     if (badge == null) {
-      badge = new com.zyc.android.bottombar.BottomBarBadge(getContext());
+      badge = new BottomBarBadge(getContext());
       badge.attachToTab(this, badgeBackgroundColor);
     }
 
@@ -495,7 +495,7 @@ public class BottomBarTab extends LinearLayout {
       public void run() {
         if (!isActive && badge != null) {
           clearAnimation();
-          badge.adjustPositionAndSize(com.zyc.android.bottombar.BottomBarTab.this);
+          badge.adjustPositionAndSize(BottomBarTab.this);
           badge.show();
         }
       }

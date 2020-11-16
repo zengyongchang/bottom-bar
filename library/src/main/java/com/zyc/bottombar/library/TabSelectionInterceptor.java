@@ -22,7 +22,7 @@ public interface TabSelectionInterceptor {
   /**
    * The method being called when currently visible {@link BottomBarTab} is about to change.
    * <p>
-   * This listener is fired when the current {@link com.zyc.android.bottombar.BottomBar} is about to change. This gives
+   * This listener is fired when the current {@link BottomBar} is about to change. This gives
    * an opportunity to interrupt the {@link BottomBarTab} change.
    *
    * @param oldTabId the currently visible {@link BottomBarTab}

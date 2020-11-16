@@ -3,13 +3,13 @@ package com.zyc.bottombar.library;
 import androidx.annotation.NonNull;
 
 class BatchTabPropertyApplier { // ha
-  private final com.zyc.android.bottombar.BottomBar bottomBar;
+  private final BottomBar bottomBar;
 
   interface TabPropertyUpdater {
     void update(BottomBarTab tab);
   }
 
-  BatchTabPropertyApplier(@NonNull com.zyc.android.bottombar.BottomBar bottomBar) {
+  BatchTabPropertyApplier(@NonNull BottomBar bottomBar) {
     this.bottomBar = bottomBar;
   }
 

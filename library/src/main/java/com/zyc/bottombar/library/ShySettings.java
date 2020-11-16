@@ -4,10 +4,10 @@ package com.zyc.bottombar.library;
  * Settings specific for a shy BottomBar.
  */
 public class ShySettings {
-  private com.zyc.android.bottombar.BottomBar bottomBar;
+  private BottomBar bottomBar;
   private Boolean pendingIsVisibleInShyMode;
 
-  ShySettings(com.zyc.android.bottombar.BottomBar bottomBar) {
+  ShySettings(BottomBar bottomBar) {
     this.bottomBar = bottomBar;
   }
 
@@ -35,7 +35,7 @@ public class ShySettings {
     }
 
     if (bottomBar.isShyHeightAlreadyCalculated()) {
-      BottomNavigationBehavior<com.zyc.android.bottombar.BottomBar> behavior = BottomNavigationBehavior.from(bottomBar);
+      BottomNavigationBehavior<BottomBar> behavior = BottomNavigationBehavior.from(bottomBar);
 
       if (behavior != null) {
         boolean isHidden = !visible;

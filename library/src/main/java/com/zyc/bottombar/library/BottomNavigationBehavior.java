@@ -110,7 +110,7 @@ class BottomNavigationBehavior<V extends View> extends VerticalScrollingBehavior
     hidden = bottomLayoutHidden;
   }
 
-  static <V extends View> com.zyc.android.bottombar.BottomNavigationBehavior<V> from(@NonNull V view) {
+  static <V extends View> BottomNavigationBehavior<V> from(@NonNull V view) {
     ViewGroup.LayoutParams params = view.getLayoutParams();
 
     if (!(params instanceof CoordinatorLayout.LayoutParams)) {
@@ -120,9 +120,9 @@ class BottomNavigationBehavior<V extends View> extends VerticalScrollingBehavior
     CoordinatorLayout.Behavior behavior = ((CoordinatorLayout.LayoutParams) params)
         .getBehavior();
 
-    if (behavior instanceof com.zyc.android.bottombar.BottomNavigationBehavior) {
+    if (behavior instanceof BottomNavigationBehavior) {
       // noinspection unchecked
-      return (com.zyc.android.bottombar.BottomNavigationBehavior<V>) behavior;
+      return (BottomNavigationBehavior<V>) behavior;
     }
 
     throw new IllegalArgumentException("The view is not associated with BottomNavigationBehavior");
